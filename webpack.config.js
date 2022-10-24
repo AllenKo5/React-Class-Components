@@ -6,6 +6,17 @@ module.exports = {
         example2: './client/example2.jsx',
         example3: './client/example3.jsx'
     },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                }
+            }
+        ],
+    },
     mode: 'production',
     output: {
         path: path.resolve(__dirname, 'hosted'),
